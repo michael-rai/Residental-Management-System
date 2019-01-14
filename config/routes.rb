@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/sign-in' => 'users#signin'
   delete '/sign-out' => 'users#signout'
   patch '/change-password' => 'users#changepw'
+  # list users
+  get '/users' => 'users#index'
 
   # ticket ROUTES
   get '/tickets' => 'tickets#index'

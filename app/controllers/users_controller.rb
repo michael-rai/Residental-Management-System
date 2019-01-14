@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ProtectedController
-  skip_before_action :authenticate, only: %i[signup signin]
+  skip_before_action :authenticate, only: %i[signup signin index]
 
   # POST '/sign-up'
   def signup
@@ -22,6 +22,14 @@ class UsersController < ProtectedController
     else
       head :unauthorized
     end
+  end
+
+  # GET '/index'
+
+  def index
+    @users = User.all
+
+    render json: @users
   end
 
   # DELETE '/sign-out'
@@ -50,7 +58,8 @@ class UsersController < ProtectedController
 
   def user_creds
     params.require(:credentials)
-          .permit(:email, :password, :password_confirmation)
+          .permit(:email, :password, :password_confirmation, :text, :text,
+                  :text, :text, :text)
   end
 
   def pw_creds
