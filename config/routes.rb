@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get '/users' => 'users#index'
 
   # ticket ROUTES
+  post '/newticket' => 'tickets#create'
   get '/tickets' => 'tickets#index'
   get '/tickets/:id' => 'tickets#show'
   patch '/tickts/:id' => 'tickets#update'
   delete '/tickets/:d' => 'tickets#destroy'
-
 end
