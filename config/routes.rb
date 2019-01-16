@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get '/tickets' => 'tickets#index'
   get '/tickets/:id' => 'tickets#show'
   patch '/tickts/:id' => 'tickets#update'
-  delete '/tickets/:d' => 'tickets#destroy'
+  delete '/tickets/:id' => 'tickets#destroy'
 end

@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1
   def show
-    render json: @ticket
+    render json: Ticket.find(params[:id])
   end
 
   # POST /tickets
@@ -46,6 +46,6 @@ class TicketsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ticket_params
-      params.permit(:date, :resolved, :subject, :description, :tickets)
+      params.permit(:date, :resolved, :subject, :description, :ticket)
     end
 end
