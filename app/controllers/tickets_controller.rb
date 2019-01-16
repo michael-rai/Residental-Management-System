@@ -35,6 +35,7 @@ class TicketsController < ApplicationController
 
   # DELETE /tickets/1
   def destroy
+    @ticket = Ticket.find(params[:id])
     @ticket.destroy
   end
 
